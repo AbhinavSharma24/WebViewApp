@@ -15,6 +15,7 @@
     <Button
         android:id="@+id/signOutBtn"
         android:text="Sign Out"
+        android:enabled="false"
         android:layout_alignBottom="@+id/webView"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
