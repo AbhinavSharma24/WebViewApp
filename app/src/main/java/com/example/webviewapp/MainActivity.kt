@@ -65,15 +65,15 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == MY_REQUEST_CODE){
-            var idpResponse = IdpResponse.fromResultIntent(data)
+            val idpResponse = IdpResponse.fromResultIntent(data)
             if(resultCode ==  Activity.RESULT_OK){
                 val firebaseUser = FirebaseAuth.getInstance().currentUser
 
-                Toast.makeText(this,""+ firebaseUser!!.email,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,firebaseUser!!.email,Toast.LENGTH_SHORT).show()
                 signOutBtn.isEnabled = true
             }
             else{
-                Toast.makeText(this,""+ idpResponse!!.error!!.message,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,idpResponse!!.error!!.message,Toast.LENGTH_SHORT).show()
             }
         }
     }
