@@ -51,6 +51,11 @@ class MainActivity : AppCompatActivity() {
 
         val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
+
+
+        MySite.setOnClickListener {
+            startActivity(Intent(this,MySiteActivity::class.java))
+        }
     }
 
     private fun showSignInOptions() {
