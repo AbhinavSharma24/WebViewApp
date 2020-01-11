@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
             if(resultCode ==  Activity.RESULT_OK){
                 val firebaseUser = FirebaseAuth.getInstance().currentUser
 
-                Toast.makeText(this,firebaseUser!!.email,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,""+firebaseUser!!.email,Toast.LENGTH_SHORT).show()
                 signOutBtn.isEnabled = true
             }
             else{
-                Toast.makeText(this,idpResponse!!.error!!.message,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,""+idpResponse!!.error!!.message,Toast.LENGTH_SHORT).show()
             }
         }
     }
